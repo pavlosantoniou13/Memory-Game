@@ -12,12 +12,12 @@ export default function CardsContainer(props) {
         <div className="box-container">
 
           
-            {props.cards.map(card => (
-                <div className="box" key={card.id}  onClick={props.shuffleCards}  >
-                     <img onClick={props.counter} src={card.name} alt="" />
-                     <h3>{card.Name}</h3>
-                </div>
-            ))}
+          {props.cards.map(card => (
+              <div className="box" key={card.id}  onClick={props.handleClick}  >
+                   <img  src={card.name}  alt="" />
+                   <h3>{card.Name}</h3>
+               </div>
+          ))}
             
                         
             

@@ -14,16 +14,16 @@ import kid from './Components/images/kid.jpg'
 import tsira from './Components/images/tsira.webp'
 
 const cardsObj = [
-  { name: morty, Name: "Morty" },
-  { name: rick, Name: "Rick" },
+  { name: morty, Name: "Morty" , isClicked:false },
+  { name: rick, Name: "Rick" , isClicked:false },
   { name: jerry, Name: "Jerry" },
-  { name: birdperson, Name: "Birdperson" },
-  { name: saul, Name: "Saul" },
-  { name: beth, Name: "Beth" },
-  { name: waltuh, Name: "Waltuh" },
-  { name: jesse, Name: "Jesse" },
-  { name: tsira, Name: "Tsira" },
-  { name: kid, Name: "Kid" },
+  { name: birdperson, Name: "Birdperson" , isClicked:false },
+  { name: saul, Name: "Saul" , isClicked:false },
+  { name: beth, Name: "Beth"  , isClicked:false},
+  { name: waltuh, Name: "Waltuh" , isClicked:false },
+  { name: jesse, Name: "Jesse" , isClicked:false },
+  { name: tsira, Name: "Tsira"  , isClicked:false},
+  { name: kid, Name: "Kid" , isClicked:false }
   
 ]
  
@@ -34,22 +34,23 @@ function App() {
   const shuffleCards = () => {
    const shuffledcards = [...cardsObj]
     .sort(() => Math.random() - 0.5)
-    .map((card) => ({ ...card, id: Math.random(), isClicked:false }))
+    .map((card) => ({ ...card, id: Math.random() }))
 
     setCards(shuffledcards)
     
   }
 
-  const counter = (e) => {
-    if(e.event.target.card.isClicked === false) {
-      console.log("h karta den eixe patithei")
-    } else if(e.event.target.isClicked === false) {
-      console.log("h karta eixe patithei")
-    }
+  const handleClick = (e) => {
+    console.log(e.target)
+
+    
+    shuffleCards()
+
+    
   }
 
-
   console.log(cards)
+  
   
   useEffect(() => {
     let ignore = false;
@@ -61,7 +62,7 @@ function App() {
   return (
     <div>
       <Navbar  />
-      <CardsContainer shuffleCards={shuffleCards} cards={cards} counter={counter} />
+      <CardsContainer shuffleCards={shuffleCards} cards={cards} handleClick={handleClick} />
     </div>
     
   );
