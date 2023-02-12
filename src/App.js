@@ -16,7 +16,7 @@ import tsira from './Components/images/tsira.webp'
 const cardsObj = [
   { name: morty, Name: "Morty" , isClicked:false },
   { name: rick, Name: "Rick" , isClicked:false },
-  { name: jerry, Name: "Jerry" },
+  { name: jerry, Name: "Jerry", isClicked:false },
   { name: birdperson, Name: "Birdperson" , isClicked:false },
   { name: saul, Name: "Saul" , isClicked:false },
   { name: beth, Name: "Beth"  , isClicked:false},
@@ -30,7 +30,7 @@ const cardsObj = [
 function App() {
 
   const [cards, setCards] = useState([])
-  const [cardChoice, setCardChoice] = useState(null)
+  const [clickedCard, setClickedCard] = useState(null)
 
   const shuffleCards = () => {
    const shuffledcards = [...cardsObj]
@@ -43,16 +43,20 @@ function App() {
 
   const handleClick = (card) => {
     console.log(card)
-
-
     
-
+    setClickedCard(card)
+    
     shuffleCards()
 
     
   }
 
-  console.log(cards)
+ 
+  useEffect(() => {
+    if(clickedCard) {
+      console.log(clickedCard.isClicked + "m")
+    }
+  })
   
   
   useEffect(() => {

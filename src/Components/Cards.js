@@ -10,7 +10,7 @@ export default function Card( props ) {
 
   return (
     <div className="box" key={props.card.id}  onClick={handleChoice}  card={props.card} >
-      <img onClick={handleChoice} src={props.card.name}  alt="" />
+      <img  src={props.card.name}  alt="" />
       <h3>{props.card.Name}</h3>
     </div>
   )
