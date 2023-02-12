@@ -1,4 +1,6 @@
 import React from 'react'
+import Card from './Cards'
+
 
 
 export default function CardsContainer(props) {
@@ -13,10 +15,7 @@ export default function CardsContainer(props) {
 
           
           {props.cards.map(card => (
-              <div className="box" key={card.id}  onClick={props.handleClick}  value={card} >
-                   <img onClick={props.handleClick} src={card.name} value={card} alt="" />
-                   <h3>{card.Name}</h3>
-               </div>
+             <Card key={card.id} card={card} handleClick={props.handleClick} /> 
           ))}
             
                         

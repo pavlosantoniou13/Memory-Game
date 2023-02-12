@@ -30,6 +30,7 @@ const cardsObj = [
 function App() {
 
   const [cards, setCards] = useState([])
+  const [cardChoice, setCardChoice] = useState(null)
 
   const shuffleCards = () => {
    const shuffledcards = [...cardsObj]
@@ -40,10 +41,12 @@ function App() {
     
   }
 
-  const handleClick = (e) => {
-    console.log(e.target)
+  const handleClick = (card) => {
+    console.log(card)
+
 
     
+
     shuffleCards()
 
     
@@ -62,7 +65,7 @@ function App() {
   return (
     <div>
       <Navbar  />
-      <CardsContainer shuffleCards={shuffleCards} cards={cards} handleClick={handleClick} />
+      <CardsContainer shuffleCards={shuffleCards} cards={cards} handleClick={handleClick}  />
     </div>
     
   );
