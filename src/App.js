@@ -65,10 +65,15 @@ function App() {
 
     if(card.isClicked === true) {
       setscore(0)
+      setCards(prevCards => {
+        return prevCards.map(card => {
+         return {...card, isClicked:false}
+        }) 
+       })
       
     } else if(card.isClicked === false) {
       setscore(score + 1)
-      console.log("you won")
+      
     }
     
   }
