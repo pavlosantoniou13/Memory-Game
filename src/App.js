@@ -29,11 +29,11 @@ const cardsObj = [
  
 function App() {
 
-  const [cards, setCards] = useState([])
+  const [cards, setCards] = useState(cardsObj)
   const [clickedCard, setClickedCard] = useState(null)
 
   const shuffleCards = () => {
-   const shuffledcards = [...cardsObj]
+   const shuffledcards = [...cards]
     .sort(() => Math.random() - 0.5)
     .map((card) => ({ ...card, id: Math.random() }))
 
@@ -42,7 +42,7 @@ function App() {
   }
 
   const handleClick = (card) => {
-    console.log(card)
+    //console.log(card)
     
    
     const  toBeTrueCard = [card]
@@ -52,7 +52,7 @@ function App() {
 
     shuffleCards()
 
-    console.log(clickedCard)
+    //console.log(clickedCard)
 
     
   }
