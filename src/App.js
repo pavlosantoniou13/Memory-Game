@@ -44,19 +44,36 @@ function App() {
   const handleClick = (card) => {
     console.log(card)
     
-    setClickedCard(card)
-    
+   
+    const  toBeTrueCard = [card]
+    .map((card) => ({...card, isClicked:true}))
+
+    setClickedCard(toBeTrueCard)
+
     shuffleCards()
+
+    console.log(clickedCard)
 
     
   }
 
- 
+  
+
   useEffect(() => {
     if(clickedCard) {
-      console.log(clickedCard.isClicked + "m")
+     setCards(prevCards => {
+      return prevCards.map(card => {
+        if(clickedCard.Name === card.Name){
+          return {...card, isClicked:true}
+        } else {
+          return card
+        }
+      })
+     })
+      
+      
     }
-  })
+  },[clickedCard])
   
   
   useEffect(() => {
@@ -65,6 +82,8 @@ function App() {
     if (!ignore)  shuffleCards()
     return () => { ignore = true; }
     },[]);
+
+    console.log(cards)
 
   return (
     <div>
