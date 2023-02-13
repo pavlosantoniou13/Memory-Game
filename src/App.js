@@ -42,13 +42,12 @@ function App() {
   }
 
   const handleClick = (card) => {
-    //console.log(card)
+    
     
    
-    const  toBeTrueCard = [card]
-    .map((card) => ({...card, isClicked:true}))
+    
 
-    setClickedCard(toBeTrueCard)
+    setClickedCard({...card, isClicked:true})
 
     shuffleCards()
 
@@ -68,7 +67,7 @@ function App() {
         } else {
           return card
         }
-      })
+      }) 
      })
       
       
