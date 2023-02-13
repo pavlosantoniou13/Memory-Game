@@ -31,6 +31,7 @@ function App() {
 
   const [cards, setCards] = useState(cardsObj)
   const [clickedCard, setClickedCard] = useState(null)
+  const [score, setscore] = useState(0)
 
   const shuffleCards = () => {
    const shuffledcards = [...cards]
@@ -43,13 +44,15 @@ function App() {
 
   const handleClick = (card) => {
     
-    
-   
-    
-
     setClickedCard({...card, isClicked:true})
 
+    console.log(card)
+
+    
+
     shuffleCards()
+
+    scoreCounter(card)
 
     //console.log(clickedCard)
 
@@ -57,6 +60,18 @@ function App() {
   }
 
   
+
+  function scoreCounter(card) {
+
+    if(card.isClicked === true) {
+      setscore(0)
+      
+    } else if(card.isClicked === false) {
+      setscore(score + 1)
+      console.log("you won")
+    }
+    
+  }
 
   useEffect(() => {
     if(clickedCard) {
@@ -75,6 +90,7 @@ function App() {
   },[clickedCard])
   
   
+  
   useEffect(() => {
     let ignore = false;
     
@@ -86,7 +102,7 @@ function App() {
 
   return (
     <div>
-      <Navbar  />
+      <Navbar score={score} />
       <CardsContainer shuffleCards={shuffleCards} cards={cards} handleClick={handleClick}  />
     </div>
     
