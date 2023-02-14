@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Memory-Game/static/css/main.c06ee0a5.css",
+    "main.js": "/Memory-Game/static/js/main.847d0a0c.js",
+    "static/media/walter.webp": "/Memory-Game/static/media/walter.a7db0ce9eb1151343050.webp",
+    "static/media/birdperson.jpg": "/Memory-Game/static/media/birdperson.ff36d94fd9303e883bc4.jpg",
+    "static/media/rick.webp": "/Memory-Game/static/media/rick.f44a4008c47f9de23da7.webp",
+    "static/media/kid.jpg": "/Memory-Game/static/media/kid.54aaccc008b6e346f43f.jpg",
+    "static/media/jesse.webp": "/Memory-Game/static/media/jesse.7e0ebb05a82b3b0531fb.webp",
+    "static/media/morty.jpg": "/Memory-Game/static/media/morty.732e8b80f990e86a9a49.jpg",
+    "static/media/saul.webp": "/Memory-Game/static/media/saul.ee4bbbaa61f20de22b8d.webp",
+    "static/media/beth.webp": "/Memory-Game/static/media/beth.c053dabdaae2defb1692.webp",
+    "static/media/tsira.webp": "/Memory-Game/static/media/tsira.e6319a65504f0628bced.webp",
+    "static/media/jerry.jpg": "/Memory-Game/static/media/jerry.be7edc0aab600dac3f11.jpg",
+    "index.html": "/Memory-Game/index.html",
+    "main.c06ee0a5.css.map": "/Memory-Game/static/css/main.c06ee0a5.css.map",
+    "main.847d0a0c.js.map": "/Memory-Game/static/js/main.847d0a0c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c06ee0a5.css",
+    "static/js/main.847d0a0c.js"
+  ]
+}
