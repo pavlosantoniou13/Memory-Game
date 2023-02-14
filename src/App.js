@@ -47,7 +47,7 @@ function App() {
     
     setClickedCard({...card})
 
-    console.log(card)
+    
 
     
 
@@ -55,7 +55,7 @@ function App() {
 
     scoreCounter(card)
 
-    //console.log(clickedCard)
+    
 
     
   }
@@ -131,7 +131,7 @@ function App() {
     return () => { ignore = true; }
     },[]);
 
-    console.log(cards)
+    
 
   return (
     <div>
