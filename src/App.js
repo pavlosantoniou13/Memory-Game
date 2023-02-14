@@ -32,6 +32,7 @@ function App() {
   const [cards, setCards] = useState(cardsObj)
   const [clickedCard, setClickedCard] = useState(null)
   const [score, setscore] = useState(0)
+  const [highScore, setHighScore] = useState(0)
 
   const shuffleCards = () => {
    const shuffledcards = [...cards]
@@ -68,26 +69,13 @@ function App() {
       
     } else if(card.isClicked === false) {
       setscore(score + 1)
-      console.log("you won")
+      
     }
     
   }
 
-  useEffect(() => {
-    if(clickedCard) {
-    setCards(prevCards => {
-      return prevCards.map(card => {
-        if(clickedCard.isClicked === true) {
-          return {...card, isClicked:false}
-        } else {
-          return card
-        }
-      })
-    })
-      
-      
-    }
-  },[clickedCard])
+
+  
 
   useEffect(() => {
     if(clickedCard) {
@@ -105,6 +93,25 @@ function App() {
     }
   },[clickedCard])
   
+
+
+  useEffect(() => {
+    if(clickedCard) {
+    setCards(prevCards => {
+      return prevCards.map(card => {
+        if(clickedCard.isClicked === true) {
+          return {...card, isClicked:false}
+        } else {
+          return card
+        }
+      })
+    })
+      
+      
+    }
+  },[clickedCard])
+
+ 
   
   
   useEffect(() => {
