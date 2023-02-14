@@ -5,7 +5,7 @@ body {
     width: 100vw;
     height: 100vh;
     margin: 0;
-
+  background-color: #393e46;
 }
 
 /* base styles */
@@ -22,7 +22,7 @@ body {
   align-items: center;
   max-width: 90%;
   margin: 0 auto;
-  border-bottom: 1px solid #f2f2f2;
+  
   justify-content: space-between;
 }
 
@@ -44,10 +44,10 @@ body {
 }
 
 .container {
-    background: linear-gradient(45deg, blueviolet, lightgreen);
+    background-color: #222831;
     padding: 15px 9%;
     padding-bottom: 100px;
-    height: 100%;
+    height: 100vh;
 }
 
 .container .box-container{
@@ -59,9 +59,10 @@ body {
 .container .box-container .box {
     box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
     border-radius: 5px;
-    background-color: #fff;
+    background-color: #393e46;
     text-align: center;
-    padding: 30px 20px;
+    padding: 15px 10px;
+    color: white;
 }
 
 img {
