@@ -32,7 +32,7 @@ function App() {
   const [cards, setCards] = useState(cardsObj)
   const [clickedCard, setClickedCard] = useState(null)
   const [score, setscore] = useState(0)
-  const [highScore, setHighScore] = useState(0)
+  const [highScore, setHighScore] = useState(score)
 
   const shuffleCards = () => {
    const shuffledcards = [...cards]
@@ -71,11 +71,21 @@ function App() {
       setscore(score + 1)
       
     }
-    
+    highScoreSet()
   }
 
 
-  
+  function highScoreSet() {
+    
+    if(score > highScore) {
+      let highScore = score
+      setHighScore(highScore)
+    } else if (highScore > score){
+      return 
+    }
+  }
+
+
 
   useEffect(() => {
     if(clickedCard) {
@@ -125,7 +135,7 @@ function App() {
 
   return (
     <div>
-      <Navbar score={score} />
+      <Navbar score={score} highScore={highScore} />
       <CardsContainer shuffleCards={shuffleCards} cards={cards} handleClick={handleClick}  />
     </div>
     
